@@ -8,6 +8,25 @@
        gedeeld gaan worden door jullie projecten */
 
     /* Kleuren */
+
+
+    html {
+        color-scheme: light dark;
+        --achtergrondkleur1: light-dark(#F6EBDB, #72583C);
+        --tekstkleur1: light-dark(#284326, #F6EBDB);
+    }
+
+    .kleur-voorbeeld-achtergrond1 {
+        background-color: var(--achtergrondkleur1);
+        color: var(--tekstkleur1);
+
+    }
+
+    .kleur-voorbeeld-tekstkleur1 {
+        background-color: var(--tekstkleur1);
+        color: var(--achtergrondkleur1);
+    }
+
     .color-example {
         background-color: #bada55;
     }
