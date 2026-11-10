@@ -4,6 +4,29 @@
 
 @layer styleguide {
 
+    @font-face {
+        font-family: "Montserrat";
+        font-weight: 100 1000;
+        font-style: normal;
+        font-display: fallback;
+
+        /*Ik heb geprobeerd om woff2-versies te maken, maar het resultaat was nog niet goed.*/
+        src:
+            /* url("assets/fonts/Montserrat.woff2") format("woff2"), */
+            url("assets/fonts/Montserrat.ttf") format("truetype");
+    }
+
+    @font-face {
+        font-family: "Montserrat";
+        font-weight: 100 1000;
+        font-style: italic;
+        font-display: fallback;
+
+        src:
+            /* url("assets/fonts/Montserrat-italic.woff2") format("woff2"), */
+            url("assets/fonts/Montserrat-Italic.ttf") format("truetype");
+    }
+
     /* Schrijf hier de verschillende stijlen, die
        gedeeld gaan worden door jullie projecten */
 
@@ -32,6 +55,16 @@
     }
 
     /* Typografie */
+
+    p,
+    a {
+        font-family: "Montserrat";
+
+        font-size: 1.1rem;
+        /*Hier is een voorbeeld van de functie progress. Als het scherm breder wordt, dan wordt het lettertype groter.
+        We kunnen bedenken of we dit willen en het anders weer weghalen.*/
+        font-size: calc(1.1rem + progress(100vw, 500px, 1000px)*0.5rem);
+    }
 
 
     /* Formulier elementen */
