@@ -58,6 +58,8 @@
         color-scheme: light dark;
         --achtergrondkleur1: light-dark(#F6EBDB, #72583C);
         --tekstkleur1: light-dark(#284326, #F6EBDB);
+        --versierkleur1: light-dark(#72583C, #A6BDE2);
+        --versierkleur2: light-dark(#322425, #A6CFA4);
     }
 
     .kleur-voorbeeld-achtergrond1 {
@@ -69,6 +71,16 @@
     .kleur-voorbeeld-tekstkleur1 {
         background-color: var(--tekstkleur1);
         color: var(--achtergrondkleur1);
+    }
+
+    .kleur-voorbeeld-versiering1 {
+        background-color: var(--versierkleur1);
+        color: light-dark(white, black);
+    }
+
+    .kleur-voorbeeld-versiering2 {
+        background-color: var(--versierkleur2);
+        color: light-dark(white, black);
     }
 
     .color-example {
