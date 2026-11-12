@@ -50,6 +50,24 @@
             url("assets/fonts/CherrySwash-Bold.ttf") format("truetype");
     }
 
+    /*
+    MARK: remedie 
+    */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    button {
+        font-family: inherit;
+    }
+
     /* Schrijf hier de verschillende stijlen, die
        gedeeld gaan worden door jullie projecten */
 
@@ -179,7 +197,6 @@
         padding: var(--afstand-klein);
 
         :nth-child(1) {
-            display: block;
             border-radius: var(--rand-straal-1);
         }
 
