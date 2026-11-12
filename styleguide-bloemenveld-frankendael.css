@@ -64,8 +64,9 @@
         max-width: 100%;
     }
 
-    button {
+    button, input {
         font-family: inherit;
+        font-size: inherit;
     }
 
     /* Schrijf hier de verschillende stijlen, die
