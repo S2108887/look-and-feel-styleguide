@@ -81,11 +81,6 @@
         --versierkleur1: light-dark(#318256, #A6CFA4);
         --versierkleur2: light-dark(#5C87CC, #A6BDE2);
 
-        --rand-straal-1: 1rem;
-
-        --afstand-normaal: 1rem;
-        --afstand-klein: 0.5rem;
-
         /*lichtheid gaat van licht (1) naar donker (5), maar dit gaat omgekeerd in dark-mode. */
         --lichtheid-1: 90%;
         --lichtheid-2: 70%;
@@ -112,6 +107,17 @@
         --versierkleur2-l3: oklch(from var(--versierkleur2) var(--lichtheid-3) c h);
         --versierkleur2-l4: oklch(from var(--versierkleur2) var(--lichtheid-4) c h);
         --versierkleur2-l5: oklch(from var(--versierkleur2) var(--lichtheid-5) c h);
+
+        --rand-straal-1: 1rem;
+        --afstand-normaal: 1rem;
+        --afstand-klein: 0.5rem;
+
+        /*Fallback voor wanneer de functie progress het niet doet.*/
+        --standaard-tekstgrootte: 1.1rem;
+
+        /*Hier is een voorbeeld van de functie progress. Als het scherm breder wordt, dan wordt het lettertype groter.
+        We kunnen bedenken of we dit willen en het anders weer weghalen.*/
+        --standaard-tekstgrootte: calc(1.1rem + progress(100vw, 500px, 1000px)*0.5rem);
     }
 
     .kleur-voorbeeld-achtergrond1 {
@@ -207,12 +213,14 @@
         }
     }
 
+    /* Typografie */
+
     body {
+        font-family: "Montserrat";
         background-color: var(--achtergrondkleur1);
+        font-size: var(--standaard-tekstgrootte);
         color: var(--tekstkleur1);
     }
-
-    /* Typografie */
 
     h1,
     h2,
@@ -238,13 +246,11 @@
     }
 
     p,
-    a {
-        font-family: "Montserrat";
-
-        font-size: 1.1rem;
-        /*Hier is een voorbeeld van de functie progress. Als het scherm breder wordt, dan wordt het lettertype groter.
-        We kunnen bedenken of we dit willen en het anders weer weghalen.*/
-        font-size: calc(1.1rem + progress(100vw, 500px, 1000px)*0.5rem);
+    a,
+    label,
+    legend {
+        font-size: var(--standaard-tekstgrootte);
+        font-family: "Montserrat"
     }
 
 
