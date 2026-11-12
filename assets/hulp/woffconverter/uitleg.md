@@ -1,0 +1,1 @@
+De Rust-library [woofwoof](https://crates.io/crates/woofwoof) is gebruikt om de woff2-lettertype-bestanden te verkrijgen. In deze map zit de code die gebruikt is.

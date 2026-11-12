@@ -12,7 +12,7 @@
 
         /*Er zijn woff2-versies gemaakt, maar het resultaat was nog niet goed.*/
         src:
-            /* url("assets/fonts/Montserrat.woff2") format("woff2"), */
+            url("assets/fonts/Montserrat.woff2") format("woff2"),
             url("assets/fonts/Montserrat.ttf") format("truetype");
     }
 
@@ -24,7 +24,7 @@
 
         src:
             /*Er zijn woff2-versies gemaakt, maar het resultaat was nog niet goed.*/
-            /* url("assets/fonts/Montserrat-italic.woff2") format("woff2"), */
+            url("assets/fonts/Montserrat-Italic.woff2") format("woff2"),
             url("assets/fonts/Montserrat-Italic.ttf") format("truetype");
     }
 
@@ -35,6 +35,7 @@
         font-display: fallback;
 
         src:
+            url("assets/fonts/CherrySwash-Regular.woff2") format("woff2"),
             url("assets/fonts/CherrySwash-Regular.ttf") format("truetype");
     }
 
@@ -45,6 +46,7 @@
         font-display: fallback;
 
         src:
+            url("assets/fonts/CherrySwash-Bold.woff2") format("woff2"),
             url("assets/fonts/CherrySwash-Bold.ttf") format("truetype");
     }
 
