@@ -62,6 +62,38 @@
         --tekstkleur1: light-dark(#284326, #F6EBDB);
         --versierkleur1: light-dark(#318256, #A6CFA4);
         --versierkleur2: light-dark(#5C87CC, #A6BDE2);
+
+        --rand-straal-1: 1rem;
+
+        --afstand-normaal: 1rem;
+        --afstand-klein: 0.5rem;
+
+        /*lichtheid gaat van licht (1) naar donker (5), maar dit gaat omgekeerd in dark-mode. */
+        --lichtheid-1: 90%;
+        --lichtheid-2: 70%;
+        --lichtheid-3: 50%;
+        --lichtheid-4: 30%;
+        --lichtheid-5: 15%;
+
+        @media (prefers-color-scheme: dark) {
+            --lichtheid-1: 15%;
+            --lichtheid-2: 30%;
+            --lichtheid-3: 50%;
+            --lichtheid-4: 70%;
+            --lichtheid-5: 90%;
+        }
+
+        --versierkleur1-l1: oklch(from var(--versierkleur1) var(--lichtheid-1) c h);
+        --versierkleur1-l2: oklch(from var(--versierkleur1) var(--lichtheid-2) c h);
+        --versierkleur1-l3: oklch(from var(--versierkleur1) var(--lichtheid-3) c h);
+        --versierkleur1-l4: oklch(from var(--versierkleur1) var(--lichtheid-4) c h);
+        --versierkleur1-l5: oklch(from var(--versierkleur1) var(--lichtheid-5) c h);
+
+        --versierkleur2-l1: oklch(from var(--versierkleur2) var(--lichtheid-1) c h);
+        --versierkleur2-l2: oklch(from var(--versierkleur2) var(--lichtheid-2) c h);
+        --versierkleur2-l3: oklch(from var(--versierkleur2) var(--lichtheid-3) c h);
+        --versierkleur2-l4: oklch(from var(--versierkleur2) var(--lichtheid-4) c h);
+        --versierkleur2-l5: oklch(from var(--versierkleur2) var(--lichtheid-5) c h);
     }
 
     .kleur-voorbeeld-achtergrond1 {
@@ -83,6 +115,32 @@
     .kleur-voorbeeld-versiering2 {
         background-color: var(--versierkleur2);
         color: light-dark(white, black);
+    }
+
+    /*Foto met tekst erbij*/
+
+    .fotokaart {
+        background-color: var(--versierkleur1);
+        border-radius: var(--rand-straal-1);
+        width: fit-content;
+
+        display: grid;
+        grid-template-rows: 1fr min-content;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: var(--afstand-klein);
+        padding: var(--afstand-klein);
+
+        :nth-child(1) {
+            display: block;
+            border-radius: var(--rand-straal-1);
+        }
+
+        :nth-child(2) {
+            background-color: var(--versierkleur1-l1);
+            padding: var(--afstand-klein);
+            border-radius: var(--rand-straal-1);
+        }
     }
 
     body {

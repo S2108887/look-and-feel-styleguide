@@ -34,6 +34,11 @@
     margin-block: 1em;
   }
 
+  nav:not([class]) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
   nav:not([class]) > a {
     padding: .5em;
     border: 1px solid;
