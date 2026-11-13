@@ -126,20 +126,70 @@
         --standaard-tekstgrootte: calc(1.1rem + progress(100vw, 500px, 1000px)*0.5rem);
     }
 
-    .kleur-voorbeeld-achtergrond {
-        background-color: var(--achtergrond-kleur);
-        color: var(--tekst-kleur);
+    .kleur-voorbeeld-achtergrond-licht {
+        background-color: var(--achtergrond-kleur-mode-licht);
+        color: var(--tekst-kleur-mode-licht);
 
+        @media (prefers-color-scheme: light) {
+            figure:has(&) {
+                color: white;
+                background-color: black;
+            }
+        }
     }
 
-    .kleur-voorbeeld-tekst {
-        background-color: var(--tekst-kleur);
-        color: var(--achtergrond-kleur);
+    .kleur-voorbeeld-achtergrond-donker {
+        background-color: var(--achtergrond-kleur-mode-donker);
+        color: var(--tekst-kleur-mode-licht);
+
+        @media (prefers-color-scheme: dark) {
+            figure:has(&) {
+                color: black;
+                background-color: white;
+            }
+        }
+    }
+
+    .kleur-voorbeeld-tekst-licht {
+        background-color: var(--tekst-kleur-mode-licht);
+        color: var(--achtergrond-kleur-mode-licht);
+    }
+
+    .kleur-voorbeeld-tekst-donker {
+        background-color: var(--tekst-kleur-mode-donker);
+        color: var(--achtergrond-kleur-mode-donker);
+
+        @media (prefers-color-scheme: light) {
+            figure:has(&) {
+                color: white;
+                background-color: black;
+            }
+        }
     }
 
     .kleur-voorbeeld-accent1 {
         background-color: var(--accent-kleur-1);
         color: light-dark(white, black);
+    }
+
+    .kleur-voorbeeld-accent1-licht {
+        background-color: var(--accent-kleur-1-licht);
+        color:white;
+    }
+
+    .kleur-voorbeeld-accent1-donker {
+        background-color: var(--accent-kleur-1-donker);
+        color:white;
+    }
+
+    .kleur-voorbeeld-accent2-licht {
+        background-color: var(--accent-kleur-2-licht);
+        color:white;
+    }
+
+    .kleur-voorbeeld-accent2-donker {
+        background-color: var(--accent-kleur-2-donker);
+        color:white;
     }
 
     .kleur-voorbeeld-accent2 {
