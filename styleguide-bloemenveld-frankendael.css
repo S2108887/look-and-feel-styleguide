@@ -64,7 +64,8 @@
         max-width: 100%;
     }
 
-    button, input {
+    button,
+    input {
         font-family: inherit;
         font-size: inherit;
     }
@@ -81,7 +82,7 @@
         --achtergrond-kleur-mode-licht: #F6EBDB;
         --achtergrond-kleur-mode-donker: #72583C;
         --achtergrond-kleur: light-dark(var(--achtergrond-kleur-mode-licht), var(--achtergrond-kleur-mode-donker));
-        
+
         --tekst-kleur-mode-licht: #284326;
         --tekst-kleur-mode-donker: var(--achtergrond-kleur-mode-licht);
         --tekst-kleur: light-dark(var(--tekst-kleur-mode-licht), var(--tekst-kleur-mode-donker));
@@ -212,7 +213,7 @@
         }
 
         :nth-child(2) {
-            /* background-color: var(--versierkleur1-l1); */
+            color: light-dark(var(--achtergrond-kleur), var(--accent-kleur-1-donker));
             padding: var(--afstand-klein);
             border-radius: var(--rand-straal-1);
         }
