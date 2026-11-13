@@ -114,7 +114,7 @@
         --accent-kleur-2-donker: oklch(from var(--accent-kleur-2) var(--lichtheid-donker) c h);
         --accent-kleur-2-donkerst: oklch(from var(--accent-kleur-2) var(--lichtheid-donkerst) c h);
 
-        --rand-straal-1: 1rem;
+        --rand-straal: 1rem;
         --afstand-normaal: 1rem;
         --afstand-klein: 0.5rem;
 
@@ -248,7 +248,7 @@
 
     .fotokaart {
         background-color: var(--accent-kleur-1);
-        border-radius: var(--rand-straal-1);
+        border-radius: var(--rand-straal);
         width: fit-content;
 
         display: grid;
@@ -259,13 +259,13 @@
         padding: var(--afstand-klein);
 
         :nth-child(1) {
-            border-radius: var(--rand-straal-1);
+            border-radius: var(--rand-straal);
         }
 
         :nth-child(2) {
             color: light-dark(var(--achtergrond-kleur), var(--accent-kleur-1-donker));
             padding: var(--afstand-klein);
-            border-radius: var(--rand-straal-1);
+            border-radius: var(--rand-straal);
         }
     }
 
