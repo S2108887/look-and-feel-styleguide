@@ -77,37 +77,41 @@
 
     html {
         color-scheme: light dark;
-        --achtergrondkleur1: light-dark(#F6EBDB, #72583C);
-        --tekstkleur1: light-dark(#284326, #F6EBDB);
-        --versierkleur1: light-dark(#318256, #A6CFA4);
-        --versierkleur2: light-dark(#5C87CC, #A6BDE2);
 
-        /*lichtheid gaat van licht (1) naar donker (5), maar dit gaat omgekeerd in dark-mode. */
-        --lichtheid-1: 90%;
-        --lichtheid-2: 70%;
-        --lichtheid-3: 50%;
-        --lichtheid-4: 30%;
-        --lichtheid-5: 15%;
+        --achtergrond-kleur-mode-licht: #F6EBDB;
+        --achtergrond-kleur-mode-donker: #72583C;
+        --achtergrond-kleur: light-dark(var(--achtergrond-kleur-mode-licht), var(--achtergrond-kleur-mode-donker));
+        
+        --tekst-kleur-mode-licht: #284326;
+        --tekst-kleur-mode-donker: var(--achtergrond-kleur-mode-licht);
+        --tekst-kleur: light-dark(var(--tekst-kleur-mode-licht), var(--tekst-kleur-mode-donker));
 
-        @media (prefers-color-scheme: dark) {
-            --lichtheid-1: 15%;
-            --lichtheid-2: 30%;
-            --lichtheid-3: 50%;
-            --lichtheid-4: 70%;
-            --lichtheid-5: 90%;
-        }
+        /*TODO: De twee accentkleuren zijn nog genummerd in plaats van dat de naam beschrijft wanneer je ze moet gebruiken. */
+        --accent-kleur-1-mode-licht: #318256;
+        --accent-kleur-1-mode-donker: #A6CFA4;
+        --accent-kleur-1: light-dark(var(--accent-kleur-1-mode-licht), var(--accent-kleur-1-mode-donker));
 
-        --versierkleur1-l1: oklch(from var(--versierkleur1) var(--lichtheid-1) c h);
-        --versierkleur1-l2: oklch(from var(--versierkleur1) var(--lichtheid-2) c h);
-        --versierkleur1-l3: oklch(from var(--versierkleur1) var(--lichtheid-3) c h);
-        --versierkleur1-l4: oklch(from var(--versierkleur1) var(--lichtheid-4) c h);
-        --versierkleur1-l5: oklch(from var(--versierkleur1) var(--lichtheid-5) c h);
+        --accent-kleur-2-mode-licht: #5C87CC;
+        --accent-kleur-2-mode-donker: #A6BDE2;
+        --accent-kleur-2: light-dark(var(--accent-kleur-2-mode-licht), var(--accent-kleur-2-mode-donker));
 
-        --versierkleur2-l1: oklch(from var(--versierkleur2) var(--lichtheid-1) c h);
-        --versierkleur2-l2: oklch(from var(--versierkleur2) var(--lichtheid-2) c h);
-        --versierkleur2-l3: oklch(from var(--versierkleur2) var(--lichtheid-3) c h);
-        --versierkleur2-l4: oklch(from var(--versierkleur2) var(--lichtheid-4) c h);
-        --versierkleur2-l5: oklch(from var(--versierkleur2) var(--lichtheid-5) c h);
+        --lichtheid-lichtst: 90%;
+        --lichtheid-licht: 70%;
+        --lichtheid-neutraal: 50%;
+        --lichtheid-donker: 30%;
+        --lichtheid-donkerst: 15%;
+
+        --accent-kleur-1-lichtst: oklch(from var(--accent-kleur-1) var(--lichtheid-lichtst) c h);
+        --accent-kleur-1-licht: oklch(from var(--accent-kleur-1) var(--lichtheid-licht) c h);
+        --accent-kleur-1-neutraal: oklch(from var(--accent-kleur-1) var(--lichtheid-neutraal) c h);
+        --accent-kleur-1-donker: oklch(from var(--accent-kleur-1) var(--lichtheid-donker) c h);
+        --accent-kleur-1-donkerst: oklch(from var(--accent-kleur-1) var(--lichtheid-donkerst) c h);
+
+        --accent-kleur-2-lichtst: oklch(from var(--accent-kleur-2) var(--lichtheid-lichtst) c h);
+        --accent-kleur-2-licht: oklch(from var(--accent-kleur-2) var(--lichtheid-licht) c h);
+        --accent-kleur-2-neutraal: oklch(from var(--accent-kleur-2) var(--lichtheid-neutraal) c h);
+        --accent-kleur-2-donker: oklch(from var(--accent-kleur-2) var(--lichtheid-donker) c h);
+        --accent-kleur-2-donkerst: oklch(from var(--accent-kleur-2) var(--lichtheid-donkerst) c h);
 
         --rand-straal-1: 1rem;
         --afstand-normaal: 1rem;
@@ -121,24 +125,24 @@
         --standaard-tekstgrootte: calc(1.1rem + progress(100vw, 500px, 1000px)*0.5rem);
     }
 
-    .kleur-voorbeeld-achtergrond1 {
-        background-color: var(--achtergrondkleur1);
-        color: var(--tekstkleur1);
+    .kleur-voorbeeld-achtergrond {
+        background-color: var(--achtergrond-kleur);
+        color: var(--tekst-kleur);
 
     }
 
-    .kleur-voorbeeld-tekstkleur1 {
-        background-color: var(--tekstkleur1);
-        color: var(--achtergrondkleur1);
+    .kleur-voorbeeld-tekst {
+        background-color: var(--tekst-kleur);
+        color: var(--achtergrond-kleur);
     }
 
-    .kleur-voorbeeld-versiering1 {
-        background-color: var(--versierkleur1);
+    .kleur-voorbeeld-accent1 {
+        background-color: var(--accent-kleur-1);
         color: light-dark(white, black);
     }
 
-    .kleur-voorbeeld-versiering2 {
-        background-color: var(--versierkleur2);
+    .kleur-voorbeeld-accent2 {
+        background-color: var(--accent-kleur-2);
         color: light-dark(white, black);
     }
 
@@ -147,12 +151,12 @@
         flex-wrap: wrap;
         gap: var(--afstand-klein);
 
-        &.versiering1 {
-            --_kleur: var(--versierkleur1);
+        &.accent1 {
+            --_kleur: var(--accent-kleur-1);
         }
 
-        &.versiering2 {
-            --_kleur: var(--versierkleur2);
+        &.accent2 {
+            --_kleur: var(--accent-kleur-2);
         }
 
         li {
@@ -169,30 +173,30 @@
         }
 
         :nth-child(1) {
-            --_lichtheid: var(--lichtheid-1);
+            --_lichtheid: var(--lichtheid-lichtst);
         }
 
         :nth-child(2) {
-            --_lichtheid: var(--lichtheid-2);
+            --_lichtheid: var(--lichtheid-licht);
         }
 
         :nth-child(3) {
-            --_lichtheid: var(--lichtheid-3);
+            --_lichtheid: var(--lichtheid-neutraal);
         }
 
         :nth-child(4) {
-            --_lichtheid: var(--lichtheid-4);
+            --_lichtheid: var(--lichtheid-donker);
         }
 
         :nth-child(5) {
-            --_lichtheid: var(--lichtheid-5);
+            --_lichtheid: var(--lichtheid-donkerst);
         }
     }
 
     /*Foto met tekst erbij*/
 
     .fotokaart {
-        background-color: var(--versierkleur1);
+        background-color: var(--accent-kleur-1);
         border-radius: var(--rand-straal-1);
         width: fit-content;
 
@@ -208,7 +212,7 @@
         }
 
         :nth-child(2) {
-            background-color: var(--versierkleur1-l1);
+            /* background-color: var(--versierkleur1-l1); */
             padding: var(--afstand-klein);
             border-radius: var(--rand-straal-1);
         }
@@ -218,9 +222,9 @@
 
     body {
         font-family: "Montserrat";
-        background-color: var(--achtergrondkleur1);
+        background-color: var(--achtergrond-kleur);
         font-size: var(--standaard-tekstgrootte);
-        color: var(--tekstkleur1);
+        color: var(--tekst-kleur);
     }
 
     h1,
@@ -282,11 +286,11 @@
 
         outline: 2px solid transparent;
 
-        --bloem-stip-kleur: var(--versierkleur2);
+        --bloem-stip-kleur: var(--accent-kleur-2);
 
         label:hover>&,
         &:focus {
-            outline-color: var(--tekstkleur1);
+            outline-color: var(--tekst-kleur);
         }
 
         @media (prefers-reduced-motion: no-preference) {
@@ -301,7 +305,7 @@
         }
 
         background-image: linear-gradient(0deg,
-            var(--versierkleur1) 0 var(--bloem-steel-lengte),
+            var(--accent-kleur-1) 0 var(--bloem-steel-lengte),
             transparent var(--bloem-steel-lengte) 4rem);
         background-size: 0.25rem 4rem;
         background-repeat: no-repeat;
@@ -316,11 +320,11 @@
             translate: 0 calc(0.5rem - var(--bloem-steel-lengte));
 
             background-image:
-                radial-gradient(color-mix(var(--bloem-stip-kleur) var(--bloem-alpha), var(--tekstkleur1)) 0 0.25rem,
-                    var(--tekstkleur1) calc(0.25rem + 0.5px) 0.5rem,
+                radial-gradient(color-mix(var(--bloem-stip-kleur) var(--bloem-alpha), var(--tekst-kleur)) 0 0.25rem,
+                    var(--tekst-kleur) calc(0.25rem + 0.5px) 0.5rem,
                     transparent calc(0.5rem + 1px) 100%),
                 repeating-conic-gradient(from calc(-0.5 * 3/4 * 1turn / 7),
-                    color-mix(var(--versierkleur2) var(--bloem-alpha), transparent) 0deg calc(3/4 * 1turn / 7),
+                    color-mix(var(--accent-kleur-2) var(--bloem-alpha), transparent) 0deg calc(3/4 * 1turn / 7),
                     transparent calc(3/4 * 1turn / 7) calc(1turn / 7));
 
             display: block;
