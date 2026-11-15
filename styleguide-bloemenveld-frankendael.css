@@ -291,11 +291,11 @@
         font-weight: normal;
     }
 
-    h1 {
-        font-size: calc(2rem + progress(100vw, 500px, 1000px)*1rem);
+    .grote-titel {
+    font-size: calc(2rem + progress(100vw, 500px, 1000px)*1rem);
     }
 
-    h2 {
+    .sectie-titel {
         font-size: calc(1.5rem + progress(100vw, 500px, 1000px)*0.7rem);
     }
 
@@ -489,5 +489,23 @@
             font-size: 0.9rem;
         }
 
+        /* navigatie bovenaan de styleguide */
+
+        .styleguide-navigatie {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .styleguide-navigatie a {
+            padding: 0.5em;
+            border: 1px solid;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .styleguide-navigatie a:hover,
+        .styleguide-navigatie a:focus {
+            text-decoration: underline;
+        }
 
 }
