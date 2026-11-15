@@ -365,6 +365,7 @@
         }
 
         summary {
+            font-family: "Cherry Swash";
             border-radius: var(--rand-straal);
             padding: var(--afstand-normaal);
 
