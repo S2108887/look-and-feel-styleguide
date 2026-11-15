@@ -461,4 +461,33 @@
         }
     }
 
+
+        /* navigatie icoontjes */
+
+        .navigatie-iconen {
+         display: flex;
+         flex-wrap: wrap;
+         gap: 1.5rem;
+        }
+
+        .navigatie-iconen figure {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 0.5rem;
+          margin: 0;
+        }
+
+        .navigatie-iconen img {
+            width: 4rem;
+            height: 4rem;
+            object-fit: contain;
+        }
+
+        .navigatie-iconen figcaption {
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+
 }
