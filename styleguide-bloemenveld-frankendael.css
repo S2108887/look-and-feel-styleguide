@@ -276,6 +276,8 @@
         background-color: var(--achtergrond-kleur);
         font-size: var(--standaard-tekstgrootte);
         color: var(--tekst-kleur);
+
+        padding: var(--afstand-normaal);
     }
 
     h1,
@@ -330,7 +332,8 @@
             transition: outline-color 0.3s;
         }
 
-        &:hover, &:focus {
+        &:hover,
+        &:focus {
             outline-color: var(--_linkkleur);
         }
 
@@ -342,6 +345,44 @@
             height: calc(100% + 2*var(--afstand-normaal));
             content: "";
             top: calc(-1*var(--afstand-normaal));
+        }
+    }
+
+    .detailslijst {
+        list-style-type: "";
+        padding: 0;
+
+        &>li {
+            border-radius: var(--rand-straal);
+
+            &:nth-child(2n + 1) {
+                background-color: light-dark(var(--accent-kleur-1-lichtst), var(--accent-kleur-1-neutraal));
+            }
+
+            &:nth-child(2n) {
+                background-color: light-dark(var(--accent-kleur-2-lichtst), var(--accent-kleur-2-neutraal));
+            }
+        }
+
+        summary {
+            border-radius: var(--rand-straal);
+            padding: var(--afstand-normaal);
+
+            outline: 2px solid transparent;
+
+            &:hover,
+            &:focus {
+                outline-color: currentColor;
+            }
+
+            @media (prefers-reduced-motion: no-preference) {
+                transition: outline-color 0.3s;
+            }
+
+        }
+
+        details::details-content {
+            padding-left: calc(3*var(--afstand-normaal));
         }
     }
 
