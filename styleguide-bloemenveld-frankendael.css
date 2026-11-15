@@ -507,5 +507,30 @@
         .styleguide-navigatie a:focus {
             text-decoration: underline;
         }
+    
+        .button-licht,
+        .button-donker {
+            padding: 0.7em 1.8em;
+            border: none;
+            border-radius: 100px;
+            font-family: "Cherry Swash", serif;
+            font-size: 1.5rem;
+            cursor: pointer;
+            }
+
+            .button-licht {
+            background-color: #f3e9dc;
+            color: #000;
+            }
+
+            .button-donker {
+            background-color: #604832;
+            color: #f3e9dc;
+            }
+
+            .formulier-subtitel {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            }
 
 }
