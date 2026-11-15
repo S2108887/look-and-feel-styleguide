@@ -174,22 +174,22 @@
 
     .kleur-voorbeeld-accent1-licht {
         background-color: var(--accent-kleur-1-licht);
-        color:white;
+        color: white;
     }
 
     .kleur-voorbeeld-accent1-donker {
         background-color: var(--accent-kleur-1-donker);
-        color:white;
+        color: white;
     }
 
     .kleur-voorbeeld-accent2-licht {
         background-color: var(--accent-kleur-2-licht);
-        color:white;
+        color: white;
     }
 
     .kleur-voorbeeld-accent2-donker {
         background-color: var(--accent-kleur-2-donker);
-        color:white;
+        color: white;
     }
 
     .kleur-voorbeeld-accent2 {
@@ -307,6 +307,42 @@
     legend {
         font-size: var(--standaard-tekstgrootte);
         font-family: "Montserrat"
+    }
+
+    p {
+        line-height: 1.4;
+        max-width: 25em;
+    }
+
+    p>a {
+        --_linkkleur: light-dark(var(--accent-kleur-2-neutraal), var(--accent-kleur-2-lichtst));
+        color: var(--_linkkleur);
+        border-radius: var(--rand-straal);
+        text-wrap: nowrap;
+
+        /*Dit is om de positie van &::before in te stellen.*/
+        position: relative;
+
+        outline: 2px solid transparent;
+        outline-offset: var(--afstand-klein);
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition: outline-color 0.3s;
+        }
+
+        &:hover, &:focus {
+            outline-color: var(--_linkkleur);
+        }
+
+        /*Dit pseudo-element zorgt ervoor dat je makkelijker op de link kan klikken.*/
+        &::before {
+            position: absolute;
+            left: calc(-1*var(--afstand-normaal));
+            right: calc(-1*var(--afstand-normaal));
+            height: calc(100% + 2*var(--afstand-normaal));
+            content: "";
+            top: calc(-1*var(--afstand-normaal));
+        }
     }
 
 
