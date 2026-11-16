@@ -256,6 +256,7 @@
             color: light-dark(var(--achtergrond-kleur), var(--accent-kleur-1-donker));
             padding: var(--afstand-klein);
             border-radius: var(--rand-straal);
+            font-family: var(--font-cherry);
         }
     }
 
