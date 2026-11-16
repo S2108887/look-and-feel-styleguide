@@ -305,6 +305,9 @@
     p {
         line-height: 1.4;
         max-width: 25em;
+        @media (prefers-color-scheme: dark) {
+            line-height: 1.6;
+        }
     }
 
     p>a {
