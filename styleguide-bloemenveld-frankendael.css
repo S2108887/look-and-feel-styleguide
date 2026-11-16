@@ -124,6 +124,9 @@
         /*Hier is een voorbeeld van de functie progress. Als het scherm breder wordt, dan wordt het lettertype groter.
         We kunnen bedenken of we dit willen en het anders weer weghalen.*/
         --standaard-tekstgrootte: calc(1.1rem + progress(100vw, 500px, 1000px)*0.5rem);
+
+        --font-cherry: "Cherry Swash", serif;
+        --font-montserrat: "Montserrat", sans-serif;
     }
 
     .kleur-voorbeeld-achtergrond-licht {
@@ -272,7 +275,7 @@
     /* Typografie */
 
     body {
-        font-family: "Montserrat";
+        font-family: var(--font-montserrat);
         background-color: var(--achtergrond-kleur);
         font-size: var(--standaard-tekstgrootte);
         color: var(--tekst-kleur);
@@ -286,7 +289,7 @@
     h4,
     h5,
     h6 {
-        font-family: "Cherry Swash";
+        font-family: var(--font-cherry);
         /*We kunnen erover nadenken of we bold willen of normal voor font-weight.*/
         font-weight: normal;
     }
@@ -308,7 +311,7 @@
     label,
     legend {
         font-size: var(--standaard-tekstgrootte);
-        font-family: "Montserrat"
+        font-family: var(--font-montserrat);
     }
 
     p {
@@ -365,7 +368,7 @@
         }
 
         summary {
-            font-family: "Cherry Swash";
+            font-family: var(--font-cherry);
             border-radius: var(--rand-straal);
             padding: var(--afstand-normaal);
 
@@ -513,7 +516,7 @@
             padding: 0.7em 1.8em;
             border: none;
             border-radius: 100px;
-            font-family: "Cherry Swash", serif;
+            font-family: var(--font-cherry);
             font-size: 1.5rem;
             cursor: pointer;
             }
