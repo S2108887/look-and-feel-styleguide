@@ -312,6 +312,10 @@
 
     p>a {
         --_linkkleur: light-dark(var(--accent-kleur-2-neutraal), var(--accent-kleur-2-lichtst));
+
+        text-decoration-thickness: 0.15em;
+        text-underline-offset: 0.3em;
+
         color: var(--_linkkleur);
         border-radius: var(--rand-straal);
         
