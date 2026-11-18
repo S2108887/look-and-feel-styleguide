@@ -283,7 +283,7 @@
     }
 
     .grote-titel {
-    font-size: calc(2rem + progress(100vw, 500px, 1000px)*1rem);
+        font-size: calc(2rem + progress(100vw, 500px, 1000px)*1rem);
     }
 
     .sectie-titel {
@@ -305,6 +305,7 @@
     p {
         line-height: 1.4;
         max-width: 25em;
+
         @media (prefers-color-scheme: dark) {
             line-height: 1.6;
         }
@@ -318,7 +319,7 @@
 
         color: var(--_linkkleur);
         border-radius: var(--rand-straal);
-        
+
         /*Deze verticale padding maakt het makkelijker om op de link te klikken.*/
         padding: var(--afstand-normaal) 0;
 
@@ -452,138 +453,142 @@
     }
 
 
-        /* navigatie icoontjes */
+    /* navigatie icoontjes */
 
-        .navigatie-iconen {
-         display: flex;
-         flex-wrap: wrap;
-         gap: 1.5rem;
+    .navigatie-iconen {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    .navigatie-iconen figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0;
+    }
+
+    .navigatie-iconen img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+
+        @media (prefers-color-scheme: dark) {
+            filter: invert() contrast(80%);
         }
+    }
 
-        .navigatie-iconen figure {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         gap: 0.5rem;
-          margin: 0;
+    .navigatie-iconen figcaption {
+        text-align: center;
+        font-size: var(--standaard-tekstgrootte);
+    }
+
+    /* navigatie bovenaan de styleguide */
+
+    .styleguide-navigatie {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .styleguide-navigatie a {
+        padding: 0.5em;
+        border: 1px solid;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .styleguide-navigatie a:hover,
+    .styleguide-navigatie a:focus {
+        text-decoration: underline;
+    }
+
+    .button-licht,
+    .button-donker {
+        padding: 0.7em 1.8em;
+        border: none;
+        border-radius: 100px;
+        font-family: var(--font-cherry);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .button-licht {
+        background-color: #f3e9dc;
+        color: #000;
+    }
+
+    .button-donker {
+        background-color: #604832;
+        color: #f3e9dc;
+    }
+
+    .formulier-subtitel {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .bloem-checkbox {
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+    }
+
+    .bloem-checkbox input {
+        position: absolute;
+        opacity: 0;
+        width: 1px;
+        height: 1px;
+    }
+
+    .checkbox-illustratie {
+        display: grid;
+        place-items: center;
+        width: 70px;
+        height: 70px;
+
+        border: 5px solid #fff9f0;
+        border-radius: 12px;
+        box-sizing: border-box;
+
+        position: relative;
+        overflow: visible;
+    }
+
+    .checkbox-illustratie svg {
+        width: 110%;
+        height: 110%;
+        overflow: visible;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .bloem-lijn {
+        fill: none;
+        stroke: #a5caa0;
+        stroke-width: 17;
+        stroke-miterlimit: 10;
+
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        transition: stroke-dashoffset 2s ease-in-out;
+    }
+
+    .bloem-checkbox input:checked+.checkbox-illustratie .bloem-lijn {
+        stroke-dashoffset: 0;
+    }
+
+    .bloem-checkbox input:focus-visible+.checkbox-illustratie {
+        outline: 3px solid #a5caa0;
+        outline-offset: 4px;
+        border-radius: 10px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        .bloem-lijn {
+            transition: none;
         }
-
-        .navigatie-iconen img {
-            width: 4rem;
-            height: 4rem;
-            object-fit: contain;
-        }
-
-        .navigatie-iconen figcaption {
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* navigatie bovenaan de styleguide */
-
-        .styleguide-navigatie {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .styleguide-navigatie a {
-            padding: 0.5em;
-            border: 1px solid;
-            color: inherit;
-            text-decoration: none;
-        }
-
-        .styleguide-navigatie a:hover,
-        .styleguide-navigatie a:focus {
-            text-decoration: underline;
-        }
-    
-        .button-licht,
-        .button-donker {
-            padding: 0.7em 1.8em;
-            border: none;
-            border-radius: 100px;
-            font-family: var(--font-cherry);
-            font-size: 1.5rem;
-            cursor: pointer;
-            }
-
-            .button-licht {
-            background-color: #f3e9dc;
-            color: #000;
-            }
-
-            .button-donker {
-            background-color: #604832;
-            color: #f3e9dc;
-            }
-
-            .formulier-subtitel {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            }
-
-            .bloem-checkbox {
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
-            cursor: pointer;
-            }
-
-            .bloem-checkbox input {
-            position: absolute;
-            opacity: 0;
-            width: 1px;
-            height: 1px;
-            }
-
-           .checkbox-illustratie {
-            display: grid;
-            place-items: center;
-            width: 70px;
-            height: 70px;
-
-            border: 5px solid #fff9f0;
-            border-radius: 12px;
-            box-sizing: border-box;
-
-            position: relative;
-            overflow: visible;
-            }
-
-            .checkbox-illustratie svg {
-            width: 110%;
-            height: 110%;
-            overflow: visible;
-            position: absolute;
-            z-index: 1;
-            }
-
-            .bloem-lijn {
-            fill: none;
-            stroke: #a5caa0;
-            stroke-width: 17;
-            stroke-miterlimit: 10;
-
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            transition: stroke-dashoffset 2s ease-in-out;
-            }
-
-            .bloem-checkbox input:checked + .checkbox-illustratie .bloem-lijn {
-            stroke-dashoffset: 0;
-            }
-
-            .bloem-checkbox input:focus-visible + .checkbox-illustratie {
-            outline: 3px solid #a5caa0;
-            outline-offset: 4px;
-            border-radius: 10px;
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-            .bloem-lijn {
-                transition: none;
-            }
-            }
+    }
 
 }
