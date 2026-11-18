@@ -523,4 +523,67 @@
             margin-bottom: 1rem;
             }
 
+            .bloem-checkbox {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            }
+
+            .bloem-checkbox input {
+            position: absolute;
+            opacity: 0;
+            width: 1px;
+            height: 1px;
+            }
+
+           .checkbox-illustratie {
+            display: grid;
+            place-items: center;
+            width: 70px;
+            height: 70px;
+
+            border: 5px solid #fff9f0;
+            border-radius: 12px;
+            box-sizing: border-box;
+
+            position: relative;
+            overflow: visible;
+            }
+
+            .checkbox-illustratie svg {
+            width: 110%;
+            height: 110%;
+            overflow: visible;
+            position: absolute;
+            z-index: 1;
+            }
+
+            .bloem-lijn {
+            fill: none;
+            stroke: #a5caa0;
+            stroke-width: 17;
+            stroke-miterlimit: 10;
+
+            stroke-dasharray: 1000;
+            stroke-dashoffset: 1000;
+            transition: stroke-dashoffset 2s ease-in-out;
+            }
+
+            .bloem-checkbox input:checked + .checkbox-illustratie .bloem-lijn {
+            stroke-dashoffset: 0;
+            }
+
+            .bloem-checkbox input:focus-visible + .checkbox-illustratie {
+            outline: 3px solid #a5caa0;
+            outline-offset: 4px;
+            border-radius: 10px;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+            .bloem-lijn {
+                transition: none;
+            }
+            }
+
 }
