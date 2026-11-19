@@ -452,7 +452,41 @@
         }
     }
 
+    input[type="search"],
+    input[type="text"],
+    input[type="tel"], 
+    textarea{
+    font-family: var(--font-montserrat);
+    font-size: var(--standaard-tekstgrootte);
 
+    padding: var(--afstand-klein) var(--afstand-normaal);
+    width: 100%;
+    max-width: 20em;
+
+    background-color: var(--achtergrond-kleur);
+    color: var(--tekst-kleur);
+
+    border: 2px solid var(--tekst-kleur);
+    border-radius: var(--rand-straal);
+
+    outline: 2px solid transparent;
+    outline-offset: 3px;
+
+    @media (prefers-reduced-motion: no-preference) {
+        transition: border-color 0.3s, outline-color 0.3s;
+    }
+
+    &::placeholder {
+        color: var(--tekst-kleur);
+        opacity: 0.6;
+    }
+
+    &::-webkit-search-cancel-button {
+        cursor: pointer;
+        filter: brightness(0.6);
+    }
+}
+    
     /* navigatie icoontjes */
 
     .navigatie-iconen {
