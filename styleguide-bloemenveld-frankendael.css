@@ -111,6 +111,12 @@
         --accent-kleur-2-donker: oklch(from var(--accent-kleur-2) var(--lichtheid-donker) c h);
         --accent-kleur-2-donkerst: oklch(from var(--accent-kleur-2) var(--lichtheid-donkerst) c h);
 
+        /*Momenteel hebben we niet meerdere knoppen nodig.*/
+        --knop-achtergrond-kleur-mode-licht: #604832;
+        --knop-achtergrond-kleur-mode-donker: #f3e9dc;
+        --knop-tekst-kleur-mode-licht: #f3e9dc;
+        --knop-tekst-kleur-mode-donker: #000;
+
         --rand-straal: 1rem;
         --afstand-normaal: 1rem;
         --afstand-klein: 0.5rem;
@@ -454,39 +460,39 @@
 
     input[type="search"],
     input[type="text"],
-    input[type="tel"], 
-    textarea{
-    font-family: var(--font-montserrat);
-    font-size: var(--standaard-tekstgrootte);
+    input[type="tel"],
+    textarea {
+        font-family: var(--font-montserrat);
+        font-size: var(--standaard-tekstgrootte);
 
-    padding: var(--afstand-klein) var(--afstand-normaal);
-    width: 100%;
-    max-width: 20em;
+        padding: var(--afstand-klein) var(--afstand-normaal);
+        width: 100%;
+        max-width: 20em;
 
-    background-color: var(--achtergrond-kleur);
-    color: var(--tekst-kleur);
-
-    border: 2px solid var(--tekst-kleur);
-    border-radius: var(--rand-straal);
-
-    outline: 2px solid transparent;
-    outline-offset: 3px;
-
-    @media (prefers-reduced-motion: no-preference) {
-        transition: border-color 0.3s, outline-color 0.3s;
-    }
-
-    &::placeholder {
+        background-color: var(--achtergrond-kleur);
         color: var(--tekst-kleur);
-        opacity: 0.6;
+
+        border: 2px solid var(--tekst-kleur);
+        border-radius: var(--rand-straal);
+
+        outline: 2px solid transparent;
+        outline-offset: 3px;
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition: border-color 0.3s, outline-color 0.3s;
+        }
+
+        &::placeholder {
+            color: var(--tekst-kleur);
+            opacity: 0.6;
+        }
+
+        &::-webkit-search-cancel-button {
+            cursor: pointer;
+            filter: brightness(0.6);
+        }
     }
 
-    &::-webkit-search-cancel-button {
-        cursor: pointer;
-        filter: brightness(0.6);
-    }
-}
-    
     /* navigatie icoontjes */
 
     .navigatie-iconen {
@@ -538,7 +544,8 @@
     }
 
     .button-licht,
-    .button-donker {
+    .button-donker,
+    .knop {
         padding: 0.7em 1.8em;
         border: none;
         border-radius: 100px;
@@ -547,14 +554,19 @@
         cursor: pointer;
     }
 
+    .knop {
+        background-color: light-dark(var(--knop-achtergrond-kleur-mode-licht), var(--knop-achtergrond-kleur-mode-donker));
+        color: light-dark(var(--knop-tekst-kleur-mode-licht), var(--knop-tekst-kleur-mode-donker));
+    }
+
     .button-licht {
-        background-color: #f3e9dc;
-        color: #000;
+        background-color: var(--knop-achtergrond-kleur-mode-donker);
+        color: var(--knop-tekst-kleur-mode-donker);
     }
 
     .button-donker {
-        background-color: #604832;
-        color: #f3e9dc;
+        background-color: var(--knop-achtergrond-kleur-mode-licht);;
+        color: var(--knop-tekst-kleur-mode-licht);
     }
 
     .formulier-subtitel {
