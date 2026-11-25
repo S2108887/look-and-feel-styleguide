@@ -569,6 +569,51 @@
         color: var(--knop-tekst-kleur-mode-licht);
     }
 
+    .knop,
+    .button-licht,
+    .button-donker {
+        outline: 2px solid transparent;
+        outline-offset: 3px;
+        transition:
+            background-color 0.2s ease,
+            color 0.2s ease,
+            transform 0.1s ease,
+            outline-color 0.2s ease,
+            box-shadow 0.2s ease;
+    }
+
+    .knop:hover {
+        background-color: light-dark(#4a3624, #e8dbc8);
+        box-shadow: 0 4px 10px rgb(0 0 0 / 0.2);
+        transform: translateY(-2px);
+    }
+
+    .button-licht:hover {
+        background-color: #e8dbc8;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 0.15);
+        transform: translateY(-2px);
+    }
+
+    .button-donker:hover {
+        background-color: #4a3624;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 0.25);
+        transform: translateY(-2px);
+    }
+
+    .knop:focus-visible,
+    .button-licht:focus-visible,
+    .button-donker:focus-visible {
+        outline-color: var(--accent-kleur-2);
+        box-shadow: 0 0 0 4px light-dark(rgb(92 135 204 / 0.25), rgb(166 189 226 / 0.25));
+    }
+
+    .knop:active,
+    .button-licht:active,
+    .button-donker:active {
+        transform: translateY(0) scale(0.97);
+        box-shadow: none;
+    }
+
     .formulier-subtitel {
         margin-top: 2rem;
         margin-bottom: 1rem;
