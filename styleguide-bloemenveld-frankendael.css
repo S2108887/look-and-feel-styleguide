@@ -75,6 +75,17 @@
 
     html {
         color-scheme: light dark;
+        /*Zorg dat het kleurenschema overschreven kan worden via het attribuut
+        data-kleurenschema op het body-element.  Dit zorgt ervoor dat het goed
+        gaat met de functie light-dark, maar voor prefers-color-scheme-media-queries 
+        zijn extra wijzigingen nodig. */
+        &:has(> body[data-kleurenschema="licht"]) {
+            color-scheme: light;
+        }
+
+        &:has(> body[data-kleurenschema="donker"]) {
+            color-scheme: dark;
+        }
 
         --achtergrond-kleur-mode-licht: #F6EBDB;
         --achtergrond-kleur-mode-donker: #72583C;
@@ -309,11 +320,19 @@
     }
 
     p {
-        line-height: 1.4;
+        --_lijn-hoogte-licht: 1.4;
+        --_lijn-hoogte-donker: 1.6;
+        line-height: var(--_lijn-hoogte-licht);
         max-width: 25em;
 
         @media (prefers-color-scheme: dark) {
-            line-height: 1.6;
+            line-height: var(--_lijn-hoogte-donker);
+        }
+        body[data-kleurenschema="licht"] & {
+            line-height: var(--_lijn-hoogte-licht);
+        }
+        body[data-kleurenschema="donker"] & {
+            line-height: var(--_lijn-hoogte-donker);
         }
     }
 
@@ -514,8 +533,18 @@
         height: 4rem;
         object-fit: contain;
 
+        --_filter-licht: none;
+        --_filter-donker: invert() contrast(80%);
+        filter: var(--_filter-licht);
+
         @media (prefers-color-scheme: dark) {
-            filter: invert() contrast(80%);
+            filter: var(--_filter-donker);
+        }
+        body[data-kleurenschema="licht"] & {
+            filter: var(--_filter-licht);
+        }
+        body[data-kleurenschema="donker"] & {
+            filter: var(--_filter-donker);
         }
     }
 
